@@ -22,8 +22,9 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ruby rake docutils-common
+          sudo apt-get install -y ruby rake bundler docutils-common
 
       - name: Build page and manual
         run: |
-          rake travis
+          bundle install
+          bundle exec middleman build --verbose
