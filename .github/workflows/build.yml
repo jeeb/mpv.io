@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - switch_to_github_workflow
 
 jobs:
   webpage:
