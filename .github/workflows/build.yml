@@ -33,3 +33,7 @@ jobs:
       - name: Build site and manual
         run: |
           rake travis
+          pushd build
+          /usr/bin/git remote add github https://github.com/jeeb/mpv.io
+          git push -u github HEAD:le_ci_build -f
+          popd
