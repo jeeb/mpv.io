@@ -12,6 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Check out build results repository
+        uses: actions/checkout@v2
+        with:
+          repository: mpv-player/mpv-player.github.io
+          ref: master
+          path: build
+
       - name: Install dependencies
         run: |
           sudo apt-get update
