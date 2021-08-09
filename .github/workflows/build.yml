@@ -9,14 +9,14 @@ on:
 jobs:
   webpage:
     runs-on: ubuntu-20.04
-  steps:
-    - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y ruby rake docutils-common
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby rake docutils-common
 
-    - name: Build page and manual
-      run: |
-        rake travis
+      - name: Build page and manual
+        run: |
+          rake travis
