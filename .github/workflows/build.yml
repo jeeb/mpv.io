@@ -30,7 +30,6 @@ jobs:
           ruby-version: "2.1"
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-      - name: Build page and manual
+      - name: Build site and manual
         run: |
-          bundle install
-          bundle exec middleman build --verbose
+          rake travis
