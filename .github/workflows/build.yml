@@ -19,10 +19,16 @@ jobs:
           ref: master
           path: build
 
-      - name: Install dependencies
+      - name: Install OS dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ruby rake bundler docutils-common
+          sudo apt-get install -y docutils-common
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "2.1"
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Build page and manual
         run: |
